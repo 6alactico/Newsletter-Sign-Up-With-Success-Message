@@ -1,3 +1,9 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%,58%);
+    --blue700: hsl(235, 18%, 26%);
+    --blue800: hsl(234, 29%, 20%);
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,9 +11,10 @@
 }
 
 body {
+    color: var(--blue700);
     display: flex;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.813rem;
+    font-size: 1rem;
     height: 100vh;
 }
 
@@ -19,6 +26,63 @@ body {
 #content-container {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     gap: 1rem;
+}
+
+h1 { color: var(--blue800); }
+
+section {
+    line-height: 1.5rem;
+}
+
+ul {
+    margin-block-start: 1.5rem;
+    margin-block-end: 1.5rem;
+    list-style: none;
+}
+
+li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    background-image: url('/assets/images/icon-list.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+form label {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+form input {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+}
+
+#email {
+    border: 0.08rem solid var(--grey);
+}
+
+#button {
+    background-color: var(--blue800);
+    color: var(--white);
+    font-weight: 700;
 }
