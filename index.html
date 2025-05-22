@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href="styles.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
@@ -25,9 +26,9 @@
           <li>And much more!</li>
         </ul>
       </section>
-      <form id="form" action="/action_page.php">
+      <form id="form">
         <label for="email">Email address</label>
-        <input id="email" type="email" name="email" placeholder="email@company.com" aria-describedby="email-error"/>
+        <input id="email" type="email" name="email" placeholder="email@company.com" aria-describedby="email-error" required/>
         <span aria-live="polite" id="email-error"></span>
         <input id="button" type="submit" value="Subscribe to monthly newsletter"/>
       </form>
