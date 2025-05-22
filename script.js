@@ -1,18 +1,23 @@
 const form = document.getElementById('form');
 const newsletter = document.getElementById('newsletter-container');
 const success = document.getElementById('success-container');
+const dismissButton = document.querySelector('.dismiss');
 
 // Retrieve data from form
-const handleSubmit = (e) => {
-    e.preventDefault();
+form.addEventListener ('submit', (e) => {
+    e.preventDefault(); // Prevent default
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+    let formData = new FormData(e.target); // Form data object
+    let data = Object.fromEntries(formData.entries());
 
     newsletter.classList.add('hidden');
     success.classList.remove('hidden');
     
-    console.log('Form submitted');
-};
+    console.log(data);
+});
 
-form.addEventListener('submit', handleSubmit);
+dismissButton.addEventListener('click', () => {
+    success.classList.add('hidden'); // Hide element
+    newsletter.classList.remove('hidden'); // Show element
+    form.reset();
+});

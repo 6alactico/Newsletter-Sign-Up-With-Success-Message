@@ -12,6 +12,7 @@
 }
 
 body {
+    background-color: var(--blue700);
     color: var(--blue700);
     display: flex;
     font-family: 'Roboto', sans-serif;
@@ -21,11 +22,17 @@ body {
 }
 
 article {
+    background-color: var(--white);
     width: 23.4375rem;
     height: 50.75rem;
 }
 
-#content-container {
+picture img {
+    display: block;
+    margin: auto;
+}
+
+#newsletter-content {
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
@@ -42,8 +49,8 @@ section { line-height: 1.5rem; }
 
 /* List */
 ul {
-    margin-block-start: 1.5rem;
-    margin-block-end: 1.5rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
     list-style: none;
 }
 
@@ -77,31 +84,28 @@ label {
     font-weight: 700;
 }
 
-input#email, .button {
+input, .button {
     border: none;
     border-radius: 0.5rem;
     padding: 1.2rem;
 }
 
-input#email {
-    border: 0.08rem solid var(--grey);
-}
+input { border: 0.08rem solid var(--grey); }
 
 .button {
     background-color: var(--blue800);
     color: var(--white);
+    cursor: pointer;
     font-weight: 700;
+    width: 100%;
 }
 
 /* Success screen */
-.hidden {
-    display: none !important;
-}
+.hidden { display: none !important; }
 
 #success-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     justify-content: space-between;
     padding: 2rem 1.5rem;
 }
@@ -111,4 +115,37 @@ input#email {
     flex-direction: column;
     gap: 2rem;
     margin-top: 8rem;
+}
+/* Desktop device */
+@media screen and (min-width: 48rem) {
+    body {
+        align-items: center;
+    }
+    
+    article {
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 58rem;
+        height: 100%;
+        align-items: center;
+        padding: 1.2rem;
+        gap: 2rem;
+    }
+
+    #newsletter-content {
+       padding: 0 2.5rem;
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 3.5rem; line-height: 4rem;}
+
+    #success-container {
+        width: 29rem;
+        height: auto;
+        padding: 3rem;
+    }
+    #success-text {
+       margin-top: 0;
+    }
 }
