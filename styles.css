@@ -4,6 +4,7 @@
     --blue700: hsl(235, 18%, 26%);
     --blue800: hsl(234, 29%, 20%);
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,26 +17,25 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     height: 100vh;
+    justify-content: center;
 }
 
-#newsletter-container {
-    margin: auto;
-    width: 23.438rem;
+article {
+    width: 23.4375rem;
+    height: 50.75rem;
 }
 
-#content-container {
+#content-container, #success-container {
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 h1 { color: var(--blue800); }
+section { line-height: 1.5rem; }
 
-section {
-    line-height: 1.5rem;
-}
-
+/* List */
 ul {
     margin-block-start: 1.5rem;
     margin-block-end: 1.5rem;
@@ -60,29 +60,48 @@ li::before {
     width: 1.2rem;
 }
 
+/* Form contents */
 form {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-form label {
+label {
     font-size: 0.875rem;
     font-weight: 700;
 }
 
-form input {
+input#email, .button {
     border: none;
     border-radius: 0.5rem;
     padding: 1.2rem;
 }
 
-#email {
+input#email {
     border: 0.08rem solid var(--grey);
 }
 
-#button {
+.button {
     background-color: var(--blue800);
     color: var(--white);
     font-weight: 700;
+}
+
+/* Success screen */
+#success-container {
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#success-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 8rem;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+    line-height: 2.875rem;
 }
