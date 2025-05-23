@@ -25,8 +25,6 @@ form.addEventListener ('submit', (e) => {
         return;
     }
 
-    console.log(emailValue);
-
     // If valid, proceed
     const formData = new FormData(e.target); // Form data object
     const data = Object.fromEntries(formData.entries());
