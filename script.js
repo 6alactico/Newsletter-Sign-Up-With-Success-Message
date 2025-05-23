@@ -16,10 +16,10 @@ form.addEventListener ('submit', (e) => {
     emailInput.classList.remove('invalid');
     errorMessage.textContent = '';
 
-    // Custom email validation
-    const isValidEmail = /\S+@\S+\.\S+/.test(emailValue);
+    // Email validation
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
 
-    if (!isValidEmail) {
+    if (!isValidEmail.valid) {
         errorMessage.textContent = 'Valid email required';
         emailInput.classList.add('invalid');
         return;
