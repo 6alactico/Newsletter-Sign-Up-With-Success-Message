@@ -19,11 +19,13 @@ form.addEventListener ('submit', (e) => {
     // Email validation
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
 
-    if (!isValidEmail.valid) {
+    if (!isValidEmail) {
         errorMessage.textContent = 'Valid email required';
         emailInput.classList.add('invalid');
         return;
     }
+
+    console.log(emailValue);
 
     // If valid, proceed
     const formData = new FormData(e.target); // Form data object
@@ -31,7 +33,6 @@ form.addEventListener ('submit', (e) => {
 
     newsletter.classList.add('hidden');
     success.classList.remove('hidden');
-    console.log(data);
 });
 
 dismissButton.addEventListener('click', () => {
