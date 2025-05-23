@@ -61,7 +61,7 @@ li {
 }
 
 li::before {
-    background-image: url('./assets/images/icon-list.svg');
+    background-image: url('assets/images/icon-list.svg');
     background-repeat: no-repeat;
     background-size: contain;
     content: '';
