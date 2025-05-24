@@ -1,27 +1,28 @@
-const form = document.getElementById('form');
+const emailForm = document.getElementById('email-form');
 const newsletter = document.getElementById('newsletter-container');
 const success = document.getElementById('success-container');
 const dismissButton = document.querySelector('.dismiss');
-const emailInput = document.getElementById('email-address');
+const emailAddress = document.getElementById('email-address');
 const errorMessage = document.getElementById('error-message');
 
-
+function resetErrorState() {
+    emailAddress.classList.remove('invalid');
+    errorMessage.textContent = '';
+}
 // Retrieve data from form
-form.addEventListener ('submit', (e) => {
+emailForm.addEventListener ('submit', (e) => {
     e.preventDefault(); // Prevent default
 
-    const emailValue = emailInput.value.trim();
+    const emailValue = emailAddress.value.trim(); // Removes whitespace characters
 
-    // Reset state error
-    emailInput.classList.remove('invalid');
-    errorMessage.textContent = '';
+    resetErrorState();
 
     // Email validation
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(emailValue);
 
     if (!isValidEmail) {
         errorMessage.textContent = 'Valid email required';
-        emailInput.classList.add('invalid');
+        emailAddress.classList.add('invalid');
         return;
     }
 
@@ -36,9 +37,7 @@ form.addEventListener ('submit', (e) => {
 dismissButton.addEventListener('click', () => {
     success.classList.add('hidden'); // Hide element
     newsletter.classList.remove('hidden'); // Show element
-    form.reset();
+    emailForm.reset();
 
-    // Reset errors
-    errorMessage.textContent = '';
-    emailInput.classList.remove('invalid');
+    resetErrorState();
 });

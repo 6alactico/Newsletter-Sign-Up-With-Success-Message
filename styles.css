@@ -13,6 +13,7 @@
 }
 
 body {
+    align-items: center;
     background-color: var(--blue700);
     color: var(--blue700);
     display: flex;
@@ -24,14 +25,11 @@ body {
 
 article {
     background-color: var(--white);
-    width: 23.4375rem;
     height: 50.75rem;
+    width: 23.4375rem;
 }
 
-picture img {
-    display: block;
-    margin: auto;
-}
+picture img { display: block; margin: auto; }
 
 #newsletter-content {
     display: flex;
@@ -40,24 +38,20 @@ picture img {
     gap: 1.5rem;
 }
 
-h1, h2 {
-    color: var(--blue800);
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-}
+h1, h2 { color: var(--blue800); font-size: 2.5rem; }
+h2 { line-height: 2.5rem;}
 
-/* List */
-ul {
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
-}
+/* LIST ITEMS */
+#list-text { line-height: 1.5rem; } 
+
+ul { margin-block-start: 1rem; margin-block-end: 1rem; }
 
 li {
+    line-height: 1.5rem;
     list-style: none;
     margin-bottom: 0.5rem;
     padding-left: 2rem;
     position: relative;
-    line-height: 1.5rem;
 }
 
 li::before {
@@ -72,21 +66,20 @@ li::before {
     width: 1.2rem;
 }
 
-#newsletter-text {
-    line-height: 1.5rem;
-}
-
-/* Form content */
+/* FORM CONTENT */
 form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-label {
-    font-size: 0.875rem;
-    font-weight: 700;
+.label-row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
+
+label { font-size: 0.813rem; font-weight: 700; }
 
 input, .button {
     border: none;
@@ -94,14 +87,13 @@ input, .button {
     padding: 1.2rem;
 }
 
-input { border: 0.08rem solid var(--grey); cursor: pointer; margin-bottom: 0.875rem;}
-input:focus { outline: none; } /* Remove blue focus outline*/
-
-.label-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+input { 
+    border: 0.08rem solid var(--grey); 
+    cursor: pointer; 
+    margin-bottom: 0.7rem;
 }
+
+input:focus { outline: none; border: 0.08rem solid var(--blue800); } /* Remove blue focus outline*/
 
 input.invalid { 
     background-color: hsla(0, 100%, 50%, 0.1); 
@@ -109,12 +101,9 @@ input.invalid {
     box-shadow: none;
 }
 
-#error-message {
-    color: var(--red);
-    font-size: 0.875rem;
-}
+#error-message { color: var(--red); font-size: 0.813rem; }
 
-/* Button */
+/* BUTTON CONTENT */
 .button {
     background-color: var(--blue800);
     color: var(--white);
@@ -128,7 +117,7 @@ input.invalid {
     box-shadow: 0.4rem 0.4rem 2rem var(--grey);
 }
 
-/* Success screen */
+/* SUCCESS SCREEN */
 .hidden { display: none !important; }
 
 #success-container {
@@ -148,35 +137,22 @@ input.invalid {
 
 /* Desktop device */
 @media screen and (min-width: 48rem) {
-    body { align-items: center; }
-    
     article {
+        align-items: center;
         border-radius: 1.5rem;
+        box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2);
         display: flex;
         flex-direction: row-reverse;
-        width: 58rem;
+        gap: 2.5rem;
         height: 100%;
-        align-items: center;
         padding: 1.2rem;
-        gap: 2rem;
+        width: 58rem;
     }
 
-    #newsletter-content { padding: 0 2.5rem; }
-    h1 { font-size: 3.5rem; }
-    h2 { font-size: 3.5rem; line-height: 4rem;}
-
-    #success-container {
-        height: auto;
-        padding: 3rem;
-        width: 29rem;
-    }
-
-    ul {
-    margin-block-start: 1.5rem;
-    margin-block-end: 1rem;
-    }   
-
-    #success-text {
-        margin-top: 1rem;
-    }
+    #newsletter-content { padding: 2rem; }
+    h1, h2 { font-size: 3.5rem; line-height: 3.5rem; }
+    #success-container { padding: 3rem; width: 30rem; }
+    ul { margin-block-start: 1.5rem; margin-block-end: 1rem; }   
+    #success-text { margin-top: 1rem; }
+    input:hover { border: 0.08rem solid var(--blue800); }
 }
